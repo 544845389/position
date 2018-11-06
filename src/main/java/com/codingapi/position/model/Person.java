@@ -13,7 +13,7 @@ import org.springframework.data.elasticsearch.annotations.GeoPointField;
  * @company codingApi
  * @description
  */
-@Document(indexName="elastic_person",type="person")
+@Document(indexName="elastic_search_project",type="person")
 public class Person {
 
 

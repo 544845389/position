@@ -1,7 +1,8 @@
 package com.codingapi.position.controller;
 
+import com.codingapi.position.ao.GetDistanceReq;
 import com.codingapi.position.ao.GetNearbyReq;
-import com.codingapi.position.model.Person;
+import com.codingapi.position.ao.GetNearbyRes;
 import com.codingapi.position.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,9 +27,25 @@ public class PositionController {
     private PositionService positionService;
 
 
+    /**
+     * 获取附近
+     * @param getNearbyReq
+     * @return
+     */
     @PostMapping("/getNearby")
-    public List<Person> getNearby(@RequestBody GetNearbyReq getNearbyReq){
+    public List<GetNearbyRes> getNearby(@RequestBody GetNearbyReq getNearbyReq){
       return  positionService.getNearby(getNearbyReq);
+    }
+
+
+    /**
+     * 获取距离  (米)
+     * @param getDistanceReq
+     * @return
+     */
+    @PostMapping("/getDistance")
+    public double getDistance(@RequestBody GetDistanceReq getDistanceReq){
+        return  positionService.getDistance(getDistanceReq);
     }
 
 

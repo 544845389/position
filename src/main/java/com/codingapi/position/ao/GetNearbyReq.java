@@ -12,13 +12,13 @@ public class GetNearbyReq {
     /**
      * 目标纬度
      */
-    private String  latitude;
+    private double  latitude;
 
 
     /**
      * 目标经度
      */
-    private String  longitude;
+    private double  longitude;
 
 
     /**
@@ -27,19 +27,42 @@ public class GetNearbyReq {
     private double distance;
 
 
-    public String getLatitude() {
+
+    private  int nowPage;
+
+
+    private  int pageSize;
+
+
+    public int getNowPage() {
+        return nowPage;
+    }
+
+    public void setNowPage(int nowPage) {
+        this.nowPage = nowPage;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
